@@ -35,6 +35,7 @@ def rpsFunc(pTurn,s1,s2):
             s1+=1
             return s1,s2
 
+print("Rules : Rock beats Scissors, Scissors beat Paper and Paper beats Rock.\n")
 pT = input("Your turn, player. Choose from Rock, Paper, Scissors: ")
 sComp=0
 sPlayer=0
@@ -42,10 +43,18 @@ n=1
 while n>0:
     sPlayer, sComp = rpsFunc(pT, sPlayer, sComp)
     print("Computer "+str(sComp)+" : "+str(sPlayer)+" Player ")
-    r = input("Continue? (Y/N):")
+    r = input("\nContinue? (Y/N):")
     r = r.upper()
     if r=="Y":
         n+=1
-        pT = input("Your turn, player. Choose from Rock, Paper, Scissors: ")
+        pT = input("\nYour turn, player. Choose from Rock, Paper, Scissors: ")
     else:
         break
+print("\nFinal Score --> Computer "+str(sComp)+" : "+str(sPlayer)+" Player ")
+if sComp>sPlayer:
+    print("Better luck next time!")
+elif sPlayer>sComp:
+    print("Congratulations! You win!")
+else:
+    print("Session tied. Well played!")
+print("Thank you for playing!")
